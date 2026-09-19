@@ -19,19 +19,20 @@ function isSupportedLocale(value: string | null): value is AppLocale {
   return value !== null && (SUPPORTED_LOCALES as readonly string[]).includes(value)
 }
 
-/** Resolves the initial locale from storage, then the browser, then the default. */
+/**
+ * Resolves the initial locale from storage, otherwise the default.
+ *
+ * The browser language is deliberately not consulted: the site targets
+ * Japanese applicants, so Japanese stays the first impression and English is
+ * an explicit opt-in through the locale switcher.
+ */
 export function resolveInitialLocale(): AppLocale {
   if (typeof window === 'undefined') {
     return FALLBACK_LOCALE
   }
 
   const stored = window.localStorage.getItem(STORAGE_KEY)
-  if (isSupportedLocale(stored)) {
-    return stored
-  }
-
-  const browserLanguage = window.navigator.language.slice(0, 2)
-  return isSupportedLocale(browserLanguage) ? browserLanguage : FALLBACK_LOCALE
+  return isSupportedLocale(stored) ? stored : FALLBACK_LOCALE
 }
 
 /** Persists the chosen locale so a reload keeps the user's preference. */

@@ -1,5 +1,8 @@
-/** Japanese UI messages. */
-export default {
+/**
+ * Japanese UI messages.
+ * This catalogue is the schema: every other locale must mirror its shape.
+ */
+const ja = {
   app: {
     title: '国公立大学ルーレット',
     subtitle: '国公立大学から1校をランダムに選びます',
@@ -69,4 +72,8 @@ export default {
       '偏差値は公開されている目安を基にした参考値であり、公式な数値ではありません。本サイトは娯楽目的です。',
     source: 'ソースコード',
   },
-} as const
+}
+
+export type MessageSchema = typeof ja
+
+export default ja

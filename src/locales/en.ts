@@ -1,7 +1,7 @@
-import type ja from './ja'
+import type { MessageSchema } from './ja'
 
 /** English UI messages, structurally identical to the Japanese catalogue. */
-const en: typeof ja = {
+const en: MessageSchema = {
   app: {
     title: 'Kokkoritsu Roulette',
     subtitle: 'Pick one national or public university at random',
