@@ -1,0 +1,17 @@
+- Write SOLID, readable, and maintainable code
+- Write comments in English
+- Prepare English and Japanese versions for all documents.
+- all in-UI text should be in English by default, but support Japanese localization.
+- Everytime updated the code, check all documents and update them if necessary.
+- Debug the frontend by yourself
+- Make granular commits for each unit of implementation. One commit per small, self-contained
+  unit. Do not bundle a whole subsystem into one commit. Commit each unit as soon as its checks pass.
+- If you use Python
+  - Use `uv` for package management
+  - Enable strict typing
+  - Add appropriate package for better code/quality
+- If you use JavaScript/TypeScript
+  - Use `pnpm` for package management
+  - Add appropriate package for better code/quality
+  - Use Vue for frontend
+    - Granular components are preferred.
