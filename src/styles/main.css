@@ -1,0 +1,70 @@
+:root {
+  --color-bg: #0f1424;
+  --color-bg-elevated: #1a2038;
+  --color-bg-subtle: #232b47;
+  --color-border: #333d5e;
+  --color-text: #eef1f8;
+  --color-text-muted: #a3adc8;
+  --color-accent: #ffb300;
+  --color-accent-strong: #ff8f00;
+  --color-national: #4fc3f7;
+  --color-public: #a5d6a7;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --shadow-card: 0 12px 32px rgb(0 0 0 / 35%);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, #242d52 0%, transparent 45%),
+    radial-gradient(circle at 85% 0%, #3a2350 0%, transparent 40%), var(--color-bg);
+  color: var(--color-text);
+  font-family:
+    'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0;
+  padding: var(--space-4);
+}
+
+legend {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0 var(--space-2);
+}
