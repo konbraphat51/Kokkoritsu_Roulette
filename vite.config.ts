@@ -6,8 +6,10 @@ import vue from '@vitejs/plugin-vue'
 // so assets must be resolved from a sub-path in production builds.
 const repositoryName = 'Kokkoritsu_Roulette'
 
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? `/${repositoryName}/` : '/',
+// Keyed on the mode rather than the command so that `vite preview`, which runs
+// in production mode, serves the same sub-path the deployed site uses.
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? `/${repositoryName}/` : '/',
   plugins: [vue()],
   resolve: {
     alias: {
