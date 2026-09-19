@@ -16,9 +16,7 @@ const props = defineProps<{
 const { t } = useI18n()
 const { localize } = useLocalizedText()
 
-const prefectureName = computed(() =>
-  localize(getPrefecture(props.university.prefectureCode).name),
-)
+const prefectureName = computed(() => localize(getPrefecture(props.university.prefectureCode).name))
 
 const searchUrl = computed(
   () => `https://www.google.com/search?q=${encodeURIComponent(props.university.name.ja)}`,

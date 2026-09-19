@@ -1,0 +1,5 @@
+dist
+coverage
+pnpm-lock.yaml
+# Keep the one-row-per-university table readable.
+src/data/universities.ts

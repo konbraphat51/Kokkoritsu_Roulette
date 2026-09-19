@@ -2,12 +2,7 @@ import type { LocalizedText } from '@/types/university'
 
 /** Region groups used for filtering, ordered from north to south. */
 export type RegionId =
-  | 'hokkaido-tohoku'
-  | 'kanto'
-  | 'chubu'
-  | 'kinki'
-  | 'chugoku-shikoku'
-  | 'kyushu-okinawa'
+  'hokkaido-tohoku' | 'kanto' | 'chubu' | 'kinki' | 'chugoku-shikoku' | 'kyushu-okinawa'
 
 export interface Prefecture {
   readonly code: number
@@ -75,9 +70,11 @@ const PREFECTURE_ROWS: ReadonlyArray<readonly [number, string, string, RegionId]
   [47, '沖縄県', 'Okinawa', 'kyushu-okinawa'],
 ]
 
-export const PREFECTURES: readonly Prefecture[] = PREFECTURE_ROWS.map(
-  ([code, ja, en, region]) => ({ code, name: { ja, en }, region }),
-)
+export const PREFECTURES: readonly Prefecture[] = PREFECTURE_ROWS.map(([code, ja, en, region]) => ({
+  code,
+  name: { ja, en },
+  region,
+}))
 
 const PREFECTURE_BY_CODE = new Map(PREFECTURES.map((prefecture) => [prefecture.code, prefecture]))
 

@@ -36,7 +36,12 @@ body {
     radial-gradient(circle at 85% 0%, #3a2350 0%, transparent 40%), var(--color-bg);
   color: var(--color-text);
   font-family:
-    'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic UI', system-ui, -apple-system, sans-serif;
+    'Hiragino Sans',
+    'Noto Sans JP',
+    'Yu Gothic UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.7;
 }
 
